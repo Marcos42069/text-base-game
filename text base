@@ -1,0 +1,174 @@
+#include <iostream> 
+#include<ctime>
+using namespace std;
+int Monster();
+int main() {
+
+	int playerHealth = 100;
+	int room = 1; //starting point of your game
+	char input; // holds user input
+	srand(time(NULL));
+	
+
+		cout << "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" << endl;
+		cout << "DDDPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP)DD" << endl;
+		cout << "DDD····DD·)Db)DDDD··QDb··DDDDb·)Db··)DDDD·pDb·pDb···QDDDbp)DD·DDp)Db·pDDDp···)DD" << endl;
+		cout << "DDD····DDDDDP)DDDb·pDQDb·QDC)Db)Db··)DDDb·)Db·)Db···)DP·DD)DD·DDDDDb)DC·)DP··)DD" << endl;
+		cout << "DDD···)DD·)Db)DDDD)DPPDDCDDDDP·)DDDD)DDDDPDDP·DDP···DDDDPP)DD·DD·DDb·SDDDP···)DD" << endl;
+		cout << "DDD··········································································)DD" << endl;
+		cout << "DDD·····················································)QDDDDDppp···········)DD" << endl;
+		cout << "DDD····································ppppDDDppppp··ppDDDDDDDDDDDDDbp·······)DD" << endl;
+		cout << "DDD·······················ppbDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDb·····)DD" << endl;
+		cout << "DDD··················pppDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDp···)DD" << endl;
+		cout << "DDD············qppDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDPPDDDDDDDDpp)DD" << endl;
+		cout << "DDD······ppQDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDPP·········PPDDP)DD" << endl;
+		cout << "DDD··pDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDPP···················)DD" << endl;
+		cout << "DDDpDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDP·····················)DD" << endl;
+		cout << "DDDDDDPPPPPPPPPPPPPPPPDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDPQbpp····················)DD" << endl;
+		cout << "DDDDD···················)PPPDDDDDDDDDDDDDDDDPP)···Pbp··PPPPSb················)DD" << endl;
+		cout << "DDD·)Dp························QDDDDDDDP·····································)DD" << endl;
+		cout << "DDD····PPep·················pQDDDDDDDP·······································)DD" << endl;
+		cout << "DDD····················ppDDDDDDDDDDDDC·······································)DD" << endl;
+		cout << "DDD··················)QDDDDPPQDDDDP··········································)DD" << endl;
+		cout << "DDD··················DDDD····DDDP············································)DD" << endl;
+		cout << "DDD················)DDDDP····)DDb············································)DD" << endl;
+		cout << "DDD·················QDDDP·····)DDp···········································)DD" << endl;
+		cout << "DDD··················DDDDDp···)DDDDpppp······································)DD" << endl;
+		cout << "DDD···························DDDDDDDDDPP····································)DD" << endl;
+		cout << "DDD··········································································)DD" << endl;
+		cout << "DDD··········································································)DD" << endl;
+		cout << "DDD····pDDDb···DDb··DDb·pDD·DDDDP···QDbqDDDDPDDPDDP)DDDDp·DDP·pDDDb··DDb·····)DD" << endl;
+		cout << "DDD···)DD·)Qp·pDDDb·QDDbDDD·DDbpP···DDP··DDP·DDCQDP)DP·DDPDDPQDP·)Db·DDp·····)DD" << endl;
+		cout << "DDD···)DDppDb)DDDDD·QDDDPDD·DDQpp···pDD··DDC·DDpDDP)DbpDD·DDP)DbpDDP)QDD·····)DD" << endl;
+		cout << "DDD·····PPPPPPPP·PPSPPSP·PP·PPPPS···PP···PP··PPPPP·PPPPP··PPS·)PPPP··PP······)DD" << endl;
+		cout << "DDDu·········································································)DD" << endl;
+		cout << "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" << endl;
+		cout << "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" << endl;
+	
+
+	while (playerHealth >0) {  //game loop
+		cout << "Your current health: " << playerHealth << endl << endl;
+
+
+		switch (room) {
+		case 1: //room 1
+			cout << "you're in room 1" << endl;
+			playerHealth -= Monster();
+			cout << "you can go south (s), west(w)" << endl;
+			cin >> input; 
+			if (input == 's')
+				room = 2;
+			if (input == 'w')
+				room = 5;
+			break; 
+		case 2: //room 2
+			cout << "you're in room 2" << endl;
+			cout << "you can go north(n), south (s), east (e)" << endl;
+			cin >> input;
+			if (input == 's')
+				room = 3;
+			if (input == 'n')
+				room = 1;
+			if (input == 'e')
+				room = 4;
+			break;
+		case 3: //room 3
+			cout << "you're in room 3" << endl;
+			cout << "you can go north (n) and south (s)" << endl;
+			cin >> input;
+			if (input == 'n')
+				room = 2;
+			if (input == 's')
+				room = 7;
+			break;
+		case 4: //room 4
+			cout << "you're in room 4" << endl;
+			cout << "you can go west (w)" << endl;
+			cin >> input;
+			if (input == 'w')
+				room = 2;
+		case 5: //room 5
+			cout << "you're in room 5" << endl;
+			cout << "you can go into the closet (c), south (s), or east (e)"<<endl;
+			cin >> input;
+			if (input == 'c')
+				room = 6;
+			if (input == 's')
+				room = 7;
+			if (input == 'e')
+				room = 1;
+			break;
+		case 6:
+			cout << "You're in the closet and should probably come out of it." << endl;
+			system("pause");
+			break;
+		case 7: //room 6
+			cout << "you're in room 6 you can go north (n)" << endl;
+			cout << "" << endl;
+			cin >> input;
+			if (input == 'n')
+				room = 5;
+			break;
+		case 8: //room 7
+			cout << "you're in room 7 you can go north (n) and east (e)" << endl;
+			cout << "" << endl;
+			cin >> input;
+			if (input == 'n')
+				room = 3;
+			if (input == 'e')
+				room = 8;
+			break;
+		case 9: //room 8
+			cout << "you're in room 8 you can go west (w) and east (e)" << endl;
+			cout << "" << endl;
+			cin >> input;
+			if (input == 'w')
+				room = 7;
+			if (input == 'e')
+				room = 9;
+			break;
+		case 10: //room 9
+			cout << "you're in room 9 you can go west (w) and east (e)" << endl;
+			cout << "" << endl;
+			cin >> input;
+			if (input == 'w')
+				room = 8;
+			if (input == 'e')
+				room = 10;
+			break;
+		case 11: //room 10
+			cout << "you're in room 10 you can go west (w)" << endl;
+			cout << "" << endl;
+			cin >> input;
+			if (input == 'w')
+				room = 9;
+			break;
+		}//end switch
+	}//end game loop
+
+	if (playerHealth < 0)
+		cout << "Game Over, you suck" << endl;
+	else
+		cout << "you won!" << endl;
+
+}//end main
+
+int Monster() {
+	int num = rand() % 100 + 1;
+	if (num <= 20) {
+		cout << "a spoopy speleton appears, he throws a bone at you and takes away 10 health!" << endl << endl;
+		return 10;
+	}
+	else if (num <= 50) {
+		cout << "a gross zombie attacks you!" << endl << endl;
+		return 20;
+	}
+	else if (num <= 90) {
+		cout << "Beware of the spiader!" << endl << endl;
+		return 50;
+	}
+	else {
+		cout << "Eeek! A Witch!" << endl << endl;
+		return -40;
+	}
+}
